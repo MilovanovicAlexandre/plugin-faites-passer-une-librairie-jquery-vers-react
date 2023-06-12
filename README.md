@@ -17,23 +17,23 @@ You can find my plugin at <a href='https://www.npmjs.com'>www.npmjs.com</a>
 
 - containerModalStyle <br />
 Used to personalized container of modal's style <br />
-example: containerModalStyle={{backgroundColor: blue}}
+Example: containerModalStyle={{backgroundColor: blue}}
 
 - closeModal <br />
 Used to close the modal. This prop is a function. <br />
-example: closeMosal={() => setModalOpening(false)}
+Example: closeMosal={() => setModalOpening(false)}
 
 - textModal <br />
 Used to personalized the message inside the modal. <br />
-example: textModal='Employee Created!'
+Example: textModal='Employee Created!'
 
 - styleModal <br />
 Used to personalized the css styles of the modal window. <br />
-example: styleModal={{height:'30px', width:'60px', color:'red'}}
+Example: styleModal={{height:'30px', width:'60px', color:'red'}}
 
 - styleButton <br />
 Used to personalized css styles of the modal's closure button <br />
-example: styleButton={{height:'15px'}}
+Example: styleButton={{height:'15px'}}
 
 ## Example of use
 
