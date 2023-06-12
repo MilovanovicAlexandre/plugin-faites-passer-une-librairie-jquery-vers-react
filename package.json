@@ -1,8 +1,17 @@
 {
-  "name": "plugin-faites-passer-une-librairie-jquery-vers-react",
-  "version": "0.1.0",
-  "private": true,
+  "name": "alex-modal-in-react",
+  "version": "1.1.0",
+  "description": "A customabizable modal developed in React",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [ "dist", "README.md" ],
+  "homepage": "https://github.com/MilovanovicAlexandre/plugin-faites-passer-une-librairie-jquery-vers-react", 
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MilovanovicAlexandre/plugin-faites-passer-une-librairie-jquery-vers-react.git"
+  },
   "dependencies": {
+    "@babel/polyfill": "^7.12.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -13,9 +22,10 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "docs": "jsdoc -c ./jsdoc.conf.json"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +44,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "keywords": [
+    "modal",
+    "react",
+    "customabizable modal's elements"
+  ],
+  "author": "alex2806902705",
+  "devDependencies": {
+    "@babel/cli": "^7.22.5",
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "jsdoc": "^4.0.2"
   }
 }

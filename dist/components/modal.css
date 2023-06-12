@@ -1,0 +1,44 @@
+.containerModal{
+    position: fixed; /*L'élement est positionné de façon fixed*/
+    z-index: 1; /*Indice à 1 par rapport aux autres élements en superposition*/
+    left: 0; /*Valeur du placement à gauche de l'élement*/
+    top: 0; /*Valeur du placement en haut de l'élément*/
+    height: 100%; /*La hauteur vaut 100% la hauteur de l'élément parent*/
+    width: 100%; /*La largeur vaut 100% la largeur de l'élément parent*/
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    background-color: white;
+    width: 40%;
+    height:50px;
+    border-radius: 10px;
+    display:flex;
+    flex-direction: row-reverse;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.modal p {
+    position:absolute;
+    left:32%;
+    font-size: 16px;
+}
+
+.modalButton{
+    width:35px;
+    height:35px;
+    position:absolute;
+    left:68.8%;
+    top:44%;
+    background-color: black;
+    color:white;
+    cursor:pointer;
+    border: none;
+    font-size: 15px;
+    border-radius: 25px;
+}

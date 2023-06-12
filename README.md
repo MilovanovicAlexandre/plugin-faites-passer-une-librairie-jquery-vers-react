@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Modal window in React
 
-## Available Scripts
+A customized modal used in Openclassrooms project entitled 'Faites passer une librairie jQuery vers React'.
+This is a plugin in React.
 
-In the project directory, you can run:
+## Setup
 
-### `npm start`
+You can find my plugin at <a href='https://www.npmjs.com'>www.npmjs.com</a>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- npm i alex-modal-in-react
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Modal's Props 
 
-### `npm test`
+- containerModalStyle <br />
+Used to personalized container of modal's style <br />
+example: containerModalStyle={{backgroundColor: blue}}
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- closeModal <br />
+Used to close the modal. This prop is a function. <br />
+example: closeMosal={() => setModalOpening(false)}
 
-### `npm run build`
+- textModal <br />
+Used to personalized the message inside the modal. <br />
+example: textModal='Employee Created!'
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- styleModal <br />
+Used to personalized the css styles of the modal window. <br />
+example: styleModal={{height:'30px', width:'60px', color:'red'}}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- styleButton <br />
+Used to personalized css styles of the modal's closure button <br />
+example: styleButton={{height:'15px'}}
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Example of use
 
-### `npm run eject`
+import React, {useState} from 'react'
+import {Modal} from 'alex-modal-in-react'
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<div style='background-color: lightgrey'>
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+function App() {
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+    const [modalOpening,setModalOpening] = useState(false)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+    return(
 
-## Learn More
+        <button onClick={() => setModalOpening(true)}>Open modal window</button>
+        {modalOpening ?
+            <Modal
+            closeModal={() => setModalOpening(false)}
+            textModal='Employee Created!'    
+            />
+        : null
+        }      
+    )
+}
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+export default App
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+</div>
 
-### Code Splitting
+## Explanations about example of use
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+When user clicks on button, it will open modal window. Next, when the user clicks on modal'closure button it will
+close the modal window. The useState's hook is used to control the display of the modal window. When button is
+clicked modalOpening has a value equal true so modal is displayed. When modal's closure button is clicked modalOpening
+has a value of false so the modal windows is not displayed. With the prop textModal the text displayed inside the
+modal window is 'Employee Created!'. 
 
-### Analyzing the Bundle Size
+## Entire JSX Modal's code
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<div style='background-color: lightgrey'>
 
-### Making a Progressive Web App
+function Modal({containerModalStyle, closeModal, textModal, styleModal, styleButton}) {
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+    useEffect(() => {
 
-### Advanced Configuration
+        function escapeKeyManagement(event){
+            if( event.code === 'Escape'){
+                closeModal()
+            }
+        }
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+        document.addEventListener('keydown', escapeKeyManagement)
+        return function(){
+            document.removeEventListener('keydown', escapeKeyManagement)
+        }
+    })
 
-### Deployment
+    return (
+        <div className='containerModal' style={containerModalStyle}>
+            <div className='modal' style={styleModal}>
+                <button className='modalButton' style={styleButton} onClick={closeModal}>X</button>
+                <p>{textModal}</p>
+            </div>
+        </div>
+    )
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+export default Modal
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<div>
