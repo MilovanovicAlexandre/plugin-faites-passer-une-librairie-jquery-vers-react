@@ -37,8 +37,6 @@ example: styleButton={{height:'15px'}}
 
 ## Example of use
 
-<div style='background: lightgrey;'>
-
 import React, {useState} from 'react' <br />
 import {Modal} from 'alex-modal-in-react'
 
@@ -61,8 +59,6 @@ function App() {
 
 export default App
 
-</div>
-
 ## Explanations about example of use
 
 When user clicks on button, it will open modal window. Next, when the user clicks on modal'closure button it will
@@ -72,8 +68,6 @@ has a value of false so the modal windows is not displayed. With the prop textMo
 modal window is 'Employee Created!'. 
 
 ## Entire JSX Modal's code
-
-<div style='background: lightgrey;'>
 
 function Modal({containerModalStyle, closeModal, textModal, styleModal, styleButton}) {
 
@@ -102,5 +96,3 @@ function Modal({containerModalStyle, closeModal, textModal, styleModal, styleBut
 }
 
 export default Modal
-
-<div>
