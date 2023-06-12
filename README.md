@@ -37,10 +37,10 @@ example: styleButton={{height:'15px'}}
 
 ## Example of use
 
-import React, {useState} from 'react'
-import {Modal} from 'alex-modal-in-react'
+<div style='background: lightgrey;'>
 
-<div style='background-color: lightgrey'>
+import React, {useState} from 'react' <br />
+import {Modal} from 'alex-modal-in-react'
 
 function App() {
 
@@ -73,7 +73,7 @@ modal window is 'Employee Created!'.
 
 ## Entire JSX Modal's code
 
-<div style='background-color: lightgrey'>
+<div style='background: lightgrey;'>
 
 function Modal({containerModalStyle, closeModal, textModal, styleModal, styleButton}) {
 
