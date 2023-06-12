@@ -61,7 +61,7 @@ export default App
 
 ## Explanations about example of use
 
-When user clicks on button, it will open modal window. Next, when the user clicks on modal'closure button it will
+When user clicks on button, it will open modal window. Next, when the user clicks on modal's closure button it will
 close the modal window. The useState's hook is used to control the display of the modal window. When button is
 clicked modalOpening has a value equal true so modal is displayed. When modal's closure button is clicked modalOpening
 has a value of false so the modal windows is not displayed. With the prop textModal the text displayed inside the
