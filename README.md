@@ -4,6 +4,8 @@
 
 # Modal window in React
 
+<img onerror="this.onerror=null; this.src='image_README_plugin_modal.png';" src='src/Assets/image_README_plugin_modal.png' alt='Image README plugin modal' title='image_README_plugin_modal'/>
+
 A customized modal used in Openclassrooms project entitled 'Faites passer une librairie jQuery vers React'.
 This is a plugin in React.
 
@@ -37,11 +39,13 @@ Example: styleButton={{height:'15px'}}
 
 ## Example of use
 
-import React, {useState} from 'react' <br />
+<pre>
+import React, {useState} from 'react'
+
 import {Modal} from 'alex-modal-in-react'
 
 function App() {
-
+</pre>
     const [modalOpening,setModalOpening] = useState(false)
 
     return(
@@ -55,9 +59,11 @@ function App() {
         : null
         }      
     )
+<pre>
 }
 
 export default App
+</pre>
 
 ## Explanations about example of use
 
@@ -69,8 +75,9 @@ modal window is 'Employee Created!'.
 
 ## Entire JSX Modal's code
 
+<pre>
 function Modal({containerModalStyle, closeModal, textModal, styleModal, styleButton}) {
-
+</pre>
     useEffect(() => {
 
         function escapeKeyManagement(event){
@@ -93,6 +100,8 @@ function Modal({containerModalStyle, closeModal, textModal, styleModal, styleBut
             </div>
         </div>
     )
+<pre>
 }
 
 export default Modal
+</pre>

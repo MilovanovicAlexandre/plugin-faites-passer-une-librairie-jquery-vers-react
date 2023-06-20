@@ -1,6 +1,6 @@
 {
   "name": "alex-modal-in-react",
-  "version": "1.1.2",
+  "version": "1.1.6",
   "description": "A customabizable modal developed in React",
   "main": "dist/index.js",
   "module": "dist/index.js",
