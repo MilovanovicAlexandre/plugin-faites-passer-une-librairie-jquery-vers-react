@@ -1,17 +1,26 @@
 {
-    "tags": {
-      "allowUnknownTags": true,
-      "dictionaries": ["jsdoc", "closure"]
-    },
-    "source": {
-      "include": ["src"],
-      "includePattern": ".+\\.js(doc|x)?$",
-      "excludePattern": "(^|\\/|\\\\)_"
-    },
-    "plugins": ["plugins/markdown"],
-    "opts": {
-      "destination": "docs",
-      "recurse": true,
-      "readme": "README.md"
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc", "closure"]
+  },
+  "source": {
+    "include": ["src"],
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "plugins": ["plugins/markdown"],
+  "templates": {
+    "default": {
+      "staticFiles": {
+        "include": [
+            "./src/Assets"
+        ]
+      }
     }
+  },
+  "opts": {
+    "destination": "docs",
+    "recurse": true,
+    "readme": "README.md"
   }
+}
